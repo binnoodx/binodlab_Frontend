@@ -161,8 +161,8 @@ export default function PortfolioPage() {
 
               <div className="top  lg:h-[60vh] w-auto lg:px-10 flex flex-row-reverse  items-center justify-evenly lg:gap-10">
                 <div className="textPart flex flex-col gap-5">
-                  <h1 className='lg:text-5xl text-3xl font-extrabold  text-center tracking-wide   normalFont'>Binod's Homepage</h1>
-                  <h2 className='italic text-center lg:text-xl text-sm normalFont'>Hi! I am Binod.<br /> A React/React Native Full Stack Developer</h2>
+                  <h1 className='lg:text-5xl text-3xl font-extrabold  text-center tracking-wide   normalFont'>BinodLab</h1>
+                  <h2 className='italic text-center lg:text-xl text-sm normalFont'>Hi! I am Binod.<br /> A React/React Native Full Stack Developer and this is my Homepage.</h2>
 
 
                   <div className="achievements lg:mt-5 w-full flex flex-row gap-2 justify-evenly items-center">

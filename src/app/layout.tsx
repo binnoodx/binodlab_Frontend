@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Binod Sharma",
-  description: "Hey , This is Full stack Cross Platform Developer.",
+  title: "BinodLab",
+  description: "BinodLab is the Portfolio of Aspiring Developer - Binod Sharma",
   icons: [
     { rel: "icon", url: "/favicon.ico", type: "image/x-icon" },
   ],
