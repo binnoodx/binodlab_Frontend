@@ -1,7 +1,6 @@
 // socket.js (or socket.ts)
 import { io } from "socket.io-client";
 
-export const socket = io(process.env.BACKEND_URI, {
+export const socket = io("http://localhost:3001", {
   transports: ["websocket"],
-  autoConnect:true
 });
