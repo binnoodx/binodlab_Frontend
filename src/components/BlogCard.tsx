@@ -1,28 +1,68 @@
-import React from 'react'
+import { ArrowUpRight, Clock, Eye, MessageCircleMore, ThumbsUp } from "lucide-react";
 
-const BlogCard = () => {
-  return (
-    <div>
-<div className=" flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-  <div className=" mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-[url('https://images8.alphacoders.com/821/thumb-1920-821035.png')] bg-cover">
-  </div>
-  <div className="p-6">
-    <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-     Blogs coming in few days!
-    </h5>
-    <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula. 
-    </p>
-  </div>
-  <div className="p-6 pt-0">
-    <button data-ripple-light="true" type="button" className="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-      Read More
-    </button>
-  </div>
-</div>
-      
-    </div>
-  )
+import Link from "next/link";
+
+interface BlogCardProps {
+  title: string;
+  excerpt: string;
+  category: string;
+  readTime: string;
+  color: "yellow" | "pink" | "blue" | "lime" | "orange";
+  link: string,
+  likes?: number,
+  views?: number,
+  date?: string,
+  author?: string,
+  commentCount?: number
 }
 
-export default BlogCard
+const colorClasses = {
+  yellow: "bg-yellow-400",
+  pink: "bg-pink-400",
+  blue: "bg-blue-400",
+  lime: "bg-lime-400",
+  orange: "bg-orange-400",
+};
+
+const BlogCard = ({ title, excerpt, category, readTime, color, link, date, author  }: BlogCardProps) => {
+
+  const handleGoToBlog = (link: string) => {
+    window.location.href = `${link}`
+
+
+  }
+
+  return (
+    <article
+      onClick={() => handleGoToBlog(link)}
+      className={`group  items-start cursor-none gap-5 min-w-[90vw] lg:min-w-[30vw] lg:w-[30vw] lg:min-h-[25vh] lg:h-auto overflow-hidden  border-[3px]  transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_hsl(0_0%_0%)]  `}
+    >
+
+      <div onClick={() => handleGoToBlog(link)} className={`${colorClasses[color]}  w-full border-b-[3px] border-foreground px-4 py-2 flex items-center justify-between gap-3`}>
+
+        <h1 className="neoBrutalism uppercase">{category}</h1>
+        
+
+
+        <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+      </div>
+
+
+      <div className={`p-6 flex flex-col  neoBrutalism justify-evenly h-auto `}>
+        <h3 className={`font-bold mb-3 text-xl `}>
+          {title}
+        </h3>
+        <p className={` text-md mb-3`}>
+          {excerpt}
+        </p>
+        <p className="text-sm italic">Written on {date} by {author}</p>
+         
+
+
+
+      </div>
+    </article>
+  );
+};
+
+export default BlogCard;

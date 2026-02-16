@@ -9,6 +9,11 @@ import tiktok from "@/app/assets/tiktok.png"
 import pinterest from "@/app/assets/pinterest.png"
 import binod from "@/app/assets/binod.png"
 import cursor from "@/app/assets/cursor_final.png"
+import leetcode from "@/app/assets/leetcode.png"
+import chess from "@/app/assets/chess.png"
+
+
+
 
 
 
@@ -30,5 +35,7 @@ export const images = {
     tiktok,
     pinterest,
     binod,
-    cursor
+    cursor,
+    leetcode,
+    chess
 }
